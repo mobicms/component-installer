@@ -1,0 +1,32 @@
+{
+  "name": "mobicms/mobicms-installer",
+  "description": "mobiCMS components installer",
+  "type": "composer-installer",
+  "homepage": "https://github.com/mobicms/mobicms-installer",
+  "license": "GPL-3.0",
+  "keywords": [
+    "mobicms-classic",
+    "installer"
+  ],
+  "authors": [
+    {
+      "name": "Oleg Kasyanov",
+      "email": "dev@mobicms.net",
+      "homepage": "http://mobicms.net"
+    }
+  ],
+  "require": {
+    "php": "^7.0"
+  },
+  "require-dev": {
+    "composer/composer": "^1.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mobicms\\Composer\\": "src/"
+    }
+  },
+  "extra": {
+    "class": "Mobicms\\Composer\\Installer"
+  }
+}

@@ -8,47 +8,95 @@
  * @copyright   Copyright (C) mobiCMS Community
  */
 
-namespace Mobicms\Composer;
+declare(strict_types=1);
+
+namespace Mobicms\ComponentInstaller;
 
 use Composer\Installer\LibraryInstaller;
+use Composer\Repository\InstalledRepositoryInterface;
 use Composer\Package\PackageInterface;
+use Mobicms\ComponentInstaller\InstallHandlers;
 
+/**
+ * Class Installer
+ *
+ * @package mobicms/component-installer
+ * @author  Oleg Kasyanov <dev@mobicms.net>
+ */
 class Installer extends LibraryInstaller
 {
     /**
      * {@inheritDoc}
      */
-    public function getInstallPath(PackageInterface $package)
+    public function install(
+        InstalledRepositoryInterface $repository,
+        PackageInterface $package
+    ) : void {
+        parent::install($repository, $package);
+        $this->getEventManager()->install($package);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function update(
+        InstalledRepositoryInterface $repository,
+        PackageInterface $initial,
+        PackageInterface $target
+    ) : void {
+        parent::update($repository, $initial, $target);
+        $this->getEventManager()->update($initial, $target);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function uninstall(
+        InstalledRepositoryInterface $repository,
+        PackageInterface $package
+    ) : void {
+        parent::uninstall($repository, $package);
+        $this->getEventManager()->uninstall($package);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getInstallPath(PackageInterface $package) : string
     {
         switch ($package->getType()) {
-            case 'mobicms-core':
-                return 'mobicms/src/' . $package->getPrettyName();
-                break;
-
-            case 'mobicms-module':
-                return 'modules/' . $package->getPrettyName();
-                break;
-
-            case 'mobicms-themes':
-                return 'modules/' . $package->getPrettyName();
-                break;
+            case 'mobicms-install':
+                return 'install';
 
             default:
-                $this->initializeVendorDir();
-                $basePath = ($this->vendorDir ? $this->vendorDir . '/' : '') . $package->getPrettyName();
-                $targetDir = $package->getTargetDir();
-
-                return $basePath . ($targetDir ? '/' . $targetDir : '');
+                return parent::getInstallPath($package);
         }
     }
 
     /**
      * {@inheritDoc}
      */
-    public function supports($packageType)
+    public function supports($packageType) : bool
     {
-        return $packageType == 'mobicms-core'
-            || $packageType == 'mobicms-module'
-            || $packageType == 'mobicms-theme';
+        return \in_array($packageType, [
+            'mobicms-install',
+            'mobicms-library',
+            'mobicms-module',
+            'mobicms-templates',
+        ]);
+    }
+
+    /**
+     * @return InstallHandlerManager
+     */
+    private function getEventManager() : InstallHandlerManager
+    {
+        $manager = new InstallHandlerManager;
+        $manager->attach(new InstallHandlers\ComponentConfigHandler($this));
+        $manager->attach(new InstallHandlers\RoutesConfigHandler($this));
+        $manager->attach(new InstallHandlers\PublicAssetsHandler($this));
+        $manager->attach(new InstallHandlers\PublicDataHandler($this));
+
+        return $manager;
     }
 }

@@ -8,6 +8,7 @@ Detailed change in the [repository log](https://github.com/mobicms/component-ins
 - Nothing
   
 ### Changed
+- Used native Composer filesystem methods
 - Refactoring
 
 ### Deprecated

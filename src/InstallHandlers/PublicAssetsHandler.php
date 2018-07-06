@@ -14,6 +14,7 @@ namespace Mobicms\ComponentInstaller\InstallHandlers;
 
 use Composer\Installer\LibraryInstaller;
 use Composer\Package\PackageInterface;
+use Composer\Util\Filesystem;
 use Mobicms\ComponentInstaller\InstallHandlerInterface;
 
 /**
@@ -24,15 +25,15 @@ use Mobicms\ComponentInstaller\InstallHandlerInterface;
  */
 class PublicAssetsHandler implements InstallHandlerInterface
 {
-    use FilesystemTrait;
-
     private $installer;
     private $publicPath;
+    private $util;
 
     public function __construct(LibraryInstaller $installer)
     {
         $this->installer = $installer;
         $this->publicPath = MOBICMS_PUBLIC_DIR . 'assets' . DIRECTORY_SEPARATOR;
+        $this->util = new Filesystem;
     }
 
     /**
@@ -59,7 +60,7 @@ class PublicAssetsHandler implements InstallHandlerInterface
      */
     public function uninstall(PackageInterface $package) : void
     {
-        $this->deleteRecursive($this->publicPath . $package->getName());
+        $this->util->removeDirectoryPhp($this->publicPath . $package->getName());
     }
 
     private function copy(PackageInterface $package) : void
@@ -67,7 +68,7 @@ class PublicAssetsHandler implements InstallHandlerInterface
         $sourcePath = $this->installer->getInstallPath($package) . '/public/assets/';
 
         if (is_dir($sourcePath)) {
-            $this->copyRecursive($sourcePath, $this->publicPath . $package->getName());
+            $this->util->copy($sourcePath, $this->publicPath . $package->getName());
         }
     }
 }

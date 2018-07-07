@@ -12,10 +12,7 @@ declare(strict_types=1);
 
 namespace Mobicms\ComponentInstaller\InstallHandlers;
 
-use Composer\Installer\LibraryInstaller;
 use Composer\Package\PackageInterface;
-use Composer\Util\Filesystem;
-use Mobicms\ComponentInstaller\InstallHandlerInterface;
 
 /**
  * Class ProcessPublicData
@@ -23,19 +20,8 @@ use Mobicms\ComponentInstaller\InstallHandlerInterface;
  * @package mobicms/component-installer
  * @author  Oleg Kasyanov <dev@mobicms.net>
  */
-class PublicDataHandler implements InstallHandlerInterface
+class PublicDataHandler extends AbstractDataHandler
 {
-    private $installer;
-    private $publicPath;
-    private $util;
-
-    public function __construct(LibraryInstaller $installer)
-    {
-        $this->installer = $installer;
-        $this->publicPath = MOBICMS_PUBLIC_DIR . 'data' . DIRECTORY_SEPARATOR;
-        $this->util = new Filesystem;
-    }
-
     /**
      * @param PackageInterface $package
      */
@@ -53,20 +39,13 @@ class PublicDataHandler implements InstallHandlerInterface
         $this->copy($target);
     }
 
-    /**
-     * @param PackageInterface $package
-     */
-    public function uninstall(PackageInterface $package) : void
+    protected function getSourcePath(PackageInterface $package) : string
     {
-        $this->util->removeDirectoryPhp($this->publicPath . $package->getName());
+        return (string) $this->installer->getInstallPath($package) . '/public/data/';
     }
 
-    private function copy(PackageInterface $package)
+    protected function getTargetPath() : string
     {
-        $sourcePath = $this->installer->getInstallPath($package) . '/public/data/';
-
-        if (is_dir($sourcePath)) {
-            $this->util->copy($sourcePath, $this->publicPath . $package->getName());
-        }
+        return (string) MOBICMS_PUBLIC_DIR . 'data' . DIRECTORY_SEPARATOR;
     }
 }

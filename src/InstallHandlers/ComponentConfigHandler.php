@@ -12,37 +12,21 @@ declare(strict_types=1);
 
 namespace Mobicms\ComponentInstaller\InstallHandlers;
 
-use Composer\Package\PackageInterface;
-
 /**
- * Class ProcessConfig
+ * Class ComponentConfigHandler
  *
  * @package mobicms/component-installer
  * @author  Oleg Kasyanov <dev@mobicms.net>
  */
 class ComponentConfigHandler extends AbstractConfigHandler
 {
-    /**
-     * @param PackageInterface $package
-     */
-    protected function copy(PackageInterface $package) : void
+    protected function getDestinationPath() : string
     {
-        $file = $this->installer->getInstallPath($package) . '/config/install.component.php';
-
-        if (is_file($file)) {
-            copy($file, $this->getDestinationName($package));
-        }
+        return (string) MOBICMS_CONFIG_DIR . 'system/components/';
     }
 
-    /**
-     * @param PackageInterface $package
-     * @return string
-     */
-    protected function getDestinationName(PackageInterface $package) : string
+    protected function getSourceFileName() : string
     {
-        return MOBICMS_CONFIG_DIR
-            . 'system/components/'
-            . preg_replace('/[^a-z0-9]+/', '-', strtolower($package->getName()))
-            . '.php';
+        return (string) '/config/install.component.php';
     }
 }

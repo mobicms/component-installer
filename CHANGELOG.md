@@ -8,8 +8,7 @@ Detailed change in the [repository log](https://github.com/mobicms/component-ins
 - Nothing
   
 ### Changed
-- Used native Composer filesystem methods
-- Refactoring
+- Nothing
 
 ### Deprecated
 - Nothing
@@ -22,6 +21,17 @@ Detailed change in the [repository log](https://github.com/mobicms/component-ins
 
 ### Security
 - Nothing
+
+
+## 0.4.0 `Unreleased`
+
+### Changed
+- Used native Composer filesystem methods
+- Code optimization
+- Refactoring
+
+### Removed
+- FilesystemTrait has been removed
 
 
 ## 0.3.0 `2018-07-01`

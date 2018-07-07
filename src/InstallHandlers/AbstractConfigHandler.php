@@ -54,14 +54,38 @@ abstract class AbstractConfigHandler implements InstallHandlerInterface
      */
     public function uninstall(PackageInterface $package) : void
     {
-        $file = $this->getDestinationName($package);
+        $file = $this->getDestinationFileName($package);
 
         if (is_file($file)) {
             unlink($file);
         }
     }
 
-    abstract protected function copy(PackageInterface $package) : void;
+    /**
+     * @param PackageInterface $package
+     */
+    protected function copy(PackageInterface $package) : void
+    {
+        $file = $this->installer->getInstallPath($package)
+            . '/' . ltrim($this->getSourceFileName(), '/');
 
-    abstract protected function getDestinationName(PackageInterface $package) : string;
+        if (is_file($file)) {
+            copy($file, $this->getDestinationFileName($package));
+        }
+    }
+
+    /**
+     * @param PackageInterface $package
+     * @return string
+     */
+    protected function getDestinationFileName(PackageInterface $package) : string
+    {
+        return $this->getDestinationPath()
+            . preg_replace('/[^a-z0-9]+/', '-', strtolower($package->getName()))
+            . '.php';
+    }
+
+    abstract protected function getSourceFileName() : string;
+
+    abstract protected function getDestinationPath() : string;
 }

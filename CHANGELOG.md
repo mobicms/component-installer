@@ -2,28 +2,7 @@
 All notable changes to this project will be documented in this file.  
 Detailed change in the [repository log](https://github.com/mobicms/component-installer/commits/).
 
-## Unreleased
-
-### Added
-- Nothing
-  
-### Changed
-- Nothing
-
-### Deprecated
-- Nothing
-  
-### Removed
-- Nothing
-
-### Fixed
-- Nothing
-
-### Security
-- Nothing
-
-
-## 0.4.0 `Unreleased`
+## 0.4.0 `2018-07-16`
 
 ### Changed
 - Used native Composer filesystem methods

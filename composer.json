@@ -1,43 +1,43 @@
 {
-  "name": "mobicms/component-installer",
-  "description": "mobiCMS component installer",
-  "type": "composer-plugin",
-  "homepage": "https://github.com/mobicms/component-installer",
-  "license": "GPL-3.0-only",
-  "keywords": [
-    "mobicms",
-    "composer",
-    "installer",
-    "plugin"
-  ],
-  "authors": [
-    {
-      "name": "Oleg Kasyanov",
-      "homepage": "https://github.com/batumibiz"
+    "name": "mobicms/component-installer",
+    "description": "mobiCMS component installer",
+    "type": "composer-plugin",
+    "homepage": "https://github.com/mobicms/component-installer",
+    "license": "GPL-3.0-only",
+    "keywords": [
+        "mobicms",
+        "composer",
+        "installer",
+        "plugin"
+    ],
+    "authors": [
+        {
+            "name": "Oleg Kasyanov",
+            "homepage": "https://github.com/batumibiz"
+        },
+        {
+            "name": "Our Contributors",
+            "homepage": "https://github.com/mobicms/component-installer/graphs/contributors"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "composer-plugin-api": "^1.1"
     },
-    {
-      "name": "Our Contributors",
-      "homepage": "https://github.com/mobicms/component-installer/graphs/contributors"
+    "require-dev": {
+        "composer/composer": "^1.6",
+        "zendframework/zend-coding-standard": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mobicms\\ComponentInstaller\\": "src/"
+        }
+    },
+    "extra": {
+        "class": "Mobicms\\ComponentInstaller\\Plugin"
+    },
+    "scripts": {
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf"
     }
-  ],
-  "require": {
-    "php": "^7.1",
-    "composer-plugin-api": "^1.1"
-  },
-  "require-dev": {
-    "composer/composer": "^1.6",
-    "zendframework/zend-coding-standard": "^1.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "Mobicms\\ComponentInstaller\\": "src/"
-    }
-  },
-  "extra": {
-    "class": "Mobicms\\ComponentInstaller\\Plugin"
-  },
-  "scripts": {
-    "cs-check": "phpcs",
-    "cs-fix": "phpcbf"
-  }
 }

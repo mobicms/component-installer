@@ -36,9 +36,14 @@ class Plugin implements PluginInterface
         if (is_file($constantsFile)) {
             require_once $constantsFile;
         } else {
-            define('MOBICMS_ROOT_DIR', dirname(__DIR__) . DIRECTORY_SEPARATOR);
-            define('MOBICMS_CONFIG_DIR', MOBICMS_ROOT_DIR . 'config' . DIRECTORY_SEPARATOR);
-            define('MOBICMS_PUBLIC_DIR', MOBICMS_ROOT_DIR . 'www' . DIRECTORY_SEPARATOR);
+            defined('MOBICMS_ROOT_DIR')
+            || define('MOBICMS_ROOT_DIR', dirname(__DIR__) . DIRECTORY_SEPARATOR);
+
+            defined('MOBICMS_CONFIG_DIR')
+            || define('MOBICMS_CONFIG_DIR', MOBICMS_ROOT_DIR . 'config' . DIRECTORY_SEPARATOR);
+
+            defined('MOBICMS_PUBLIC_DIR')
+            || define('MOBICMS_PUBLIC_DIR', MOBICMS_ROOT_DIR . 'www' . DIRECTORY_SEPARATOR);
         }
     }
 }

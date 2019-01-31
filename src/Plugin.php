@@ -26,24 +26,7 @@ class Plugin implements PluginInterface
 {
     public function activate(Composer $composer, IOInterface $io) : void
     {
-        $this->defineConstants(dirname(__DIR__, 4) . '/config/constants.php');
         $installer = new Installer($io, $composer);
         $composer->getInstallationManager()->addInstaller($installer);
-    }
-
-    private function defineConstants($constantsFile) : void
-    {
-        if (is_file($constantsFile)) {
-            require_once $constantsFile;
-        } else {
-            defined('MOBICMS_ROOT_DIR')
-            || define('MOBICMS_ROOT_DIR', dirname(__DIR__) . DIRECTORY_SEPARATOR);
-
-            defined('MOBICMS_CONFIG_DIR')
-            || define('MOBICMS_CONFIG_DIR', MOBICMS_ROOT_DIR . 'config' . DIRECTORY_SEPARATOR);
-
-            defined('MOBICMS_PUBLIC_DIR')
-            || define('MOBICMS_PUBLIC_DIR', MOBICMS_ROOT_DIR . 'www' . DIRECTORY_SEPARATOR);
-        }
     }
 }

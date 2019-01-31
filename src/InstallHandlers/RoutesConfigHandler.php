@@ -22,7 +22,7 @@ class RoutesConfigHandler extends AbstractConfigHandler
 {
     protected function getDestinationPath() : string
     {
-        return (string) MOBICMS_CONFIG_DIR . 'system/routes/';
+        return (string) CMS_PATH_CONFIG . 'system/routes/';
     }
 
     protected function getSourceFileName() : string

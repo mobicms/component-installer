@@ -48,6 +48,6 @@ class PublicAssetsHandler extends AbstractDataHandler
 
     protected function getTargetPath() : string
     {
-        return (string) MOBICMS_PUBLIC_DIR . 'assets' . DIRECTORY_SEPARATOR;
+        return (string) CMS_PATH_PUBLIC . 'assets' . DIRECTORY_SEPARATOR;
     }
 }

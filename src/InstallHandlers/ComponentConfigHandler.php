@@ -22,7 +22,7 @@ class ComponentConfigHandler extends AbstractConfigHandler
 {
     protected function getDestinationPath() : string
     {
-        return (string) MOBICMS_CONFIG_DIR . 'system/components/';
+        return (string) CMS_PATH_CONFIG . 'system/components/';
     }
 
     protected function getSourceFileName() : string

@@ -46,6 +46,6 @@ class PublicDataHandler extends AbstractDataHandler
 
     protected function getTargetPath() : string
     {
-        return (string) MOBICMS_PUBLIC_DIR . 'data' . DIRECTORY_SEPARATOR;
+        return (string) CMS_PATH_PUBLIC . 'data' . DIRECTORY_SEPARATOR;
     }
 }

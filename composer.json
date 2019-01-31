@@ -25,8 +25,9 @@
         "composer-plugin-api": "^1.1"
     },
     "require-dev": {
-        "composer/composer": "^1.6",
-        "zendframework/zend-coding-standard": "^1.0"
+        "composer/composer": "^1.8",
+        "roave/security-advisories": "dev-master",
+        "squizlabs/php_codesniffer": "^3.4"
     },
     "autoload": {
         "psr-4": {

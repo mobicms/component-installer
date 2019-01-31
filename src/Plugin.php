@@ -26,7 +26,21 @@ class Plugin implements PluginInterface
 {
     public function activate(Composer $composer, IOInterface $io) : void
     {
+        $this->defineConstants();
         $installer = new Installer($io, $composer);
         $composer->getInstallationManager()->addInstaller($installer);
+    }
+
+    private function defineConstants() : void
+    {
+        $constantsFile = dirname(__DIR__, 4) . '/config/constants.php';
+
+        if (is_file($constantsFile)) {
+            require_once $constantsFile;
+        } else {
+            defined('CMS_PATH_ROOT') || define('CMS_PATH_ROOT', dirname(__DIR__) . DIRECTORY_SEPARATOR);
+            defined('CMS_PATH_CONFIG') || define('CMS_PATH_CONFIG', CMS_PATH_ROOT);
+            defined('CMS_PATH_PUBLIC') || define('CMS_PATH_PUBLIC', CMS_PATH_ROOT);
+        }
     }
 }

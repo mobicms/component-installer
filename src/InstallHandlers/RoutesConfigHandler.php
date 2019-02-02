@@ -22,11 +22,11 @@ class RoutesConfigHandler extends AbstractConfigHandler
 {
     protected function getDestinationPath() : string
     {
-        return (string) CMS_PATH_CONFIG . 'system/routes/';
+        return CMS_PATH_CONFIG . 'routes/';
     }
 
     protected function getSourceFileName() : string
     {
-        return (string) '/config/install.routes.php';
+        return '/config/install.routes.php';
     }
 }

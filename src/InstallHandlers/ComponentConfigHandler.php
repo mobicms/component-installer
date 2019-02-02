@@ -22,11 +22,11 @@ class ComponentConfigHandler extends AbstractConfigHandler
 {
     protected function getDestinationPath() : string
     {
-        return (string) CMS_PATH_CONFIG . 'system/components/';
+        return CMS_PATH_CONFIG . 'components/';
     }
 
     protected function getSourceFileName() : string
     {
-        return (string) '/config/install.component.php';
+        return '/config/install.component.php';
     }
 }

@@ -2,32 +2,22 @@
 All notable changes to this project will be documented in this file.  
 Detailed change in the [repository log](https://github.com/mobicms/component-installer/commits/).
 
-## 0.4.0 `2018-07-16`
-
-### Changed
-- Used native Composer filesystem methods
-- Code optimization
-- Refactoring
-
-### Removed
-- FilesystemTrait has been removed
-
-
-## 0.3.0 `2018-07-01`
+## Unreleased 
 
 ### Added
-- Added processing of routing configuration files
+- Nothing
   
 ### Changed
-- Changed the name and path of the configuration file that is used when installing the packages
-- Changed namespace processing of saved configuration files.  
-  Now instead of MD5 uses a package name.
+- Nothing
 
-## 0.2.0 `2018-06-20`
+### Deprecated
+- Nothing
+  
+### Removed
+- Nothing
 
-### Changed
-- Changed the name and path of the configuration file that is used when installing the packages
+### Fixed
+- Nothing
 
-
-## 0.1.0 `2018-06-09`
-Initial release
+### Security
+- Nothing

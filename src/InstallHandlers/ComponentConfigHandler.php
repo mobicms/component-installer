@@ -27,6 +27,6 @@ class ComponentConfigHandler extends AbstractConfigHandler
 
     protected function getSourceFileName() : string
     {
-        return '/config/install.component.php';
+        return '/install/config.component.php';
     }
 }

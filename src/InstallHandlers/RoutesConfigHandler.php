@@ -27,6 +27,6 @@ class RoutesConfigHandler extends AbstractConfigHandler
 
     protected function getSourceFileName() : string
     {
-        return '/config/install.routes.php';
+        return '/install/config.routes.php';
     }
 }

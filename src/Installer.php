@@ -1,11 +1,10 @@
 <?php
 /**
- * mobiCMS (https://mobicms.org/)
  * This file is part of mobiCMS Content Management System.
  *
+ * @copyright   Oleg Kasyanov <dev@mobicms.net>
  * @license     https://opensource.org/licenses/GPL-3.0 GPL-3.0 (see the LICENSE.md file)
  * @link        http://mobicms.org mobiCMS Project
- * @copyright   Copyright (C) mobiCMS Community
  */
 
 declare(strict_types=1);
@@ -17,12 +16,6 @@ use Composer\Repository\InstalledRepositoryInterface;
 use Composer\Package\PackageInterface;
 use Mobicms\ComponentInstaller\InstallHandlers;
 
-/**
- * Class Installer
- *
- * @package mobicms/component-installer
- * @author  Oleg Kasyanov <dev@mobicms.net>
- */
 class Installer extends LibraryInstaller
 {
     /**
@@ -78,7 +71,7 @@ class Installer extends LibraryInstaller
      */
     public function supports($packageType) : bool
     {
-        return \in_array($packageType, [
+        return in_array($packageType, [
             'mobicms-install',
             'mobicms-library',
             'mobicms-module',

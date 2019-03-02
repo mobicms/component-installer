@@ -1,3 +1,6 @@
 .idea
-composer.lock
-/vendor
+/composer.lock
+/clover.xml
+/phpunit.xml
+/*.cache
+vendor/

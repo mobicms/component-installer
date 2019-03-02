@@ -36,11 +36,11 @@ class PublicAssetsHandler extends AbstractDataHandler
 
     protected function getSourcePath(PackageInterface $package) : string
     {
-        return (string) $this->installer->getInstallPath($package) . '/public/assets/';
+        return $this->installer->getInstallPath($package) . '/public/assets/';
     }
 
     protected function getTargetPath() : string
     {
-        return (string) CMS_PATH_PUBLIC . 'assets' . DIRECTORY_SEPARATOR;
+        return CMS_PATH_PUBLIC . 'assets' . DIRECTORY_SEPARATOR;
     }
 }

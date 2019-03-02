@@ -15,6 +15,12 @@ use Composer\Installer\LibraryInstaller;
 use Composer\Package\PackageInterface;
 use Mobicms\ComponentInstaller\InstallHandlerInterface;
 
+use function copy;
+use function is_file;
+use function preg_replace;
+use function strtolower;
+use function unlink;
+
 abstract class AbstractConfigHandler implements InstallHandlerInterface
 {
     protected $installer;

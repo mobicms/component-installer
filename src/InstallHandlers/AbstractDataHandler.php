@@ -16,6 +16,8 @@ use Composer\Package\PackageInterface;
 use Composer\Util\Filesystem;
 use Mobicms\ComponentInstaller\InstallHandlerInterface;
 
+use function is_dir;
+
 abstract class AbstractDataHandler implements InstallHandlerInterface
 {
     /**

@@ -15,6 +15,8 @@ use Composer\Composer;
 use Composer\IO\IOInterface;
 use Composer\Plugin\PluginInterface;
 
+use function is_file;
+
 class Plugin implements PluginInterface
 {
     public function activate(Composer $composer, IOInterface $io) : void

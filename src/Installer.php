@@ -16,6 +16,8 @@ use Composer\Repository\InstalledRepositoryInterface;
 use Composer\Package\PackageInterface;
 use Mobicms\ComponentInstaller\InstallHandlers;
 
+use function in_array;
+
 class Installer extends LibraryInstaller
 {
     /**

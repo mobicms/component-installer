@@ -32,12 +32,12 @@ class PublicDataHandler extends AbstractDataHandler
         $this->copy($target);
     }
 
-    protected function getSourcePath(PackageInterface $package) : string
+    public function getSourcePath(PackageInterface $package) : string
     {
         return $this->installer->getInstallPath($package) . '/public/data/';
     }
 
-    protected function getTargetPath() : string
+    public function getTargetPath() : string
     {
         return CMS_PATH_PUBLIC . 'data' . DIRECTORY_SEPARATOR;
     }

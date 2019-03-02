@@ -84,7 +84,7 @@ abstract class AbstractConfigHandler implements InstallHandlerInterface
             . '.php';
     }
 
-    abstract protected function getSourceFileName() : string;
+    abstract public function getSourceFileName() : string;
 
-    abstract protected function getDestinationPath() : string;
+    abstract public function getDestinationPath() : string;
 }

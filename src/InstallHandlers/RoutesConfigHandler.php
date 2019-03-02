@@ -13,12 +13,12 @@ namespace Mobicms\ComponentInstaller\InstallHandlers;
 
 class RoutesConfigHandler extends AbstractConfigHandler
 {
-    protected function getDestinationPath() : string
+    public function getDestinationPath() : string
     {
         return CMS_PATH_CONFIG . 'routes/';
     }
 
-    protected function getSourceFileName() : string
+    public function getSourceFileName() : string
     {
         return '/install/config.routes.php';
     }

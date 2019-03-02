@@ -60,10 +60,10 @@ abstract class AbstractDataHandler implements InstallHandlerInterface
      * @param PackageInterface $package
      * @return string
      */
-    abstract protected function getSourcePath(PackageInterface $package) : string;
+    abstract public function getSourcePath(PackageInterface $package) : string;
 
     /**
      * @return string
      */
-    abstract protected function getTargetPath() : string;
+    abstract public function getTargetPath() : string;
 }

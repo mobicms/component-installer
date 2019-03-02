@@ -13,12 +13,12 @@ namespace Mobicms\ComponentInstaller\InstallHandlers;
 
 class ComponentConfigHandler extends AbstractConfigHandler
 {
-    protected function getDestinationPath() : string
+    public function getDestinationPath() : string
     {
         return CMS_PATH_CONFIG . 'components/';
     }
 
-    protected function getSourceFileName() : string
+    public function getSourceFileName() : string
     {
         return '/install/config.component.php';
     }

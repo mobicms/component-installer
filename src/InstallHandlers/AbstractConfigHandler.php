@@ -23,6 +23,7 @@ use function unlink;
 
 abstract class AbstractConfigHandler implements InstallHandlerInterface
 {
+    /** @var LibraryInstaller */
     protected $installer;
 
     public function __construct(LibraryInstaller $installer)

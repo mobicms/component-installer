@@ -20,14 +20,10 @@ use function is_dir;
 
 abstract class AbstractDataHandler implements InstallHandlerInterface
 {
-    /**
-     * @var LibraryInstaller
-     */
+    /** @var LibraryInstaller */
     protected $installer;
 
-    /**
-     * @var Filesystem
-     */
+    /** @var Filesystem */
     protected $util;
 
     public function __construct(LibraryInstaller $installer)
@@ -41,7 +37,7 @@ abstract class AbstractDataHandler implements InstallHandlerInterface
      */
     public function uninstall(PackageInterface $package) : void
     {
-        $this->util->removeDirectoryPhp($this->getTargetPath() . $package->getName());
+        $this->util->remove($this->getTargetPath() . $package->getName());
     }
 
     /**

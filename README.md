@@ -2,10 +2,10 @@
 
 This package is part of [mobiCMS](https://github.com/mobicms/mobicms) Content Management System.
 
-[![License](https://poser.pugx.org/mobicms/component-installer/license)](https://packagist.org/packages/mobicms/component-installer)
-[![Total Downloads](https://poser.pugx.org/mobicms/component-installer/downloads)](https://packagist.org/packages/mobicms/component-installer)
-[![SemVer](http://img.shields.io/:semver-2.0.0-informational.svg?style=flat-square)](http://semver.org)
-[![Latest Stable Version](https://poser.pugx.org/mobicms/component-installer/v/stable)](https://packagist.org/packages/mobicms/component-installer)
+[![Packagist](https://img.shields.io/packagist/l/mobicms/component-installer.svg)](https://packagist.org/packages/mobicms/component-installer)
+[![Packagist](https://img.shields.io/packagist/dt/mobicms/component-installer.svg)](https://packagist.org/packages/mobicms/component-installer)
+[![Requirements Status](https://requires.io/github/mobicms/component-installer/requirements.svg?branch=develop)](https://requires.io/github/mobicms/component-installer/requirements/?branch=develop)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/mobicms/component-installer.svg?label=stable)](https://github.com/mobicms/component-installer/releases)
 
 [![Build Status](https://scrutinizer-ci.com/g/mobicms/component-installer/badges/build.png?b=develop)](https://scrutinizer-ci.com/g/mobicms/component-installer/build-status/develop)
 [![Code Coverage](https://scrutinizer-ci.com/g/mobicms/component-installer/badges/coverage.png?b=develop)](https://scrutinizer-ci.com/g/mobicms/component-installer/?branch=develop)

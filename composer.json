@@ -26,7 +26,6 @@
     },
     "require-dev": {
         "composer/composer": "^1.9",
-        "mobicms/dummy": "dev-master",
         "roave/security-advisories": "dev-master",
         "phpunit/phpunit": "^8.3",
         "squizlabs/php_codesniffer": "^3.4"
@@ -37,6 +36,9 @@
         }
     },
     "autoload-dev": {
+        "files": [
+            "test/constants.php"
+        ],
         "psr-4": {
             "MobicmsTest\\System\\": "test/"
         }

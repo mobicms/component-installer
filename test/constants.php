@@ -10,6 +10,6 @@ declare(strict_types=1);
  * @link        http://mobicms.org mobiCMS Project
  */
 
-if (!defined('CMS_PATH_CONFIG')) {
+if (! defined('CMS_PATH_CONFIG')) {
     define('CMS_PATH_CONFIG', __DIR__);
 }

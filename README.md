@@ -3,7 +3,7 @@
 [![Packagist](https://img.shields.io/packagist/l/mobicms/component-installer.svg)](https://packagist.org/packages/mobicms/component-installer)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/mobicms/component-installer.svg?label=stable)](https://github.com/mobicms/component-installer/releases)
 
-[![Build Status](https://scrutinizer-ci.com/g/mobicms/component-installer/badges/build.png?b=develop)](https://scrutinizer-ci.com/g/mobicms/component-installer/build-status/develop)
+[![Build Status](https://travis-ci.org/mobicms/component-installer.svg?branch=develop)](https://travis-ci.org/mobicms/component-installer)
 [![Code Coverage](https://scrutinizer-ci.com/g/mobicms/component-installer/badges/coverage.png?b=develop)](https://scrutinizer-ci.com/g/mobicms/component-installer/?branch=develop)
 [![StyleCI](https://github.styleci.io/repos/136712036/shield?branch=develop)](https://github.styleci.io/repos/136712036)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mobicms/component-installer/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/mobicms/component-installer/?branch=develop)

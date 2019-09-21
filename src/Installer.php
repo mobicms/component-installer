@@ -57,26 +57,12 @@ class Installer extends LibraryInstaller
     /**
      * {@inheritDoc}
      */
-    public function getInstallPath(PackageInterface $package) : string
-    {
-        switch ($package->getType()) {
-            case 'mobicms-install':
-                return 'install';
-            default:
-                return parent::getInstallPath($package);
-        }
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function supports($packageType) : bool
     {
         return in_array($packageType, [
-            'mobicms-install',
             'mobicms-library',
             'mobicms-module',
-            'mobicms-templates',
+            'mobicms-template',
         ]);
     }
 

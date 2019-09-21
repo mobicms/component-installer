@@ -1,5 +1,8 @@
 <?php
-/**
+
+declare(strict_types=1);
+
+/*
  * This file is part of mobiCMS Content Management System.
  *
  * @copyright   Oleg Kasyanov <dev@mobicms.net>
@@ -7,14 +10,11 @@
  * @link        http://mobicms.org mobiCMS Project
  */
 
-declare(strict_types=1);
-
 namespace Mobicms\ComponentInstaller;
 
 use Composer\Installer\LibraryInstaller;
 use Composer\Repository\InstalledRepositoryInterface;
 use Composer\Package\PackageInterface;
-use Mobicms\ComponentInstaller\InstallHandlers;
 
 use function in_array;
 
@@ -62,7 +62,6 @@ class Installer extends LibraryInstaller
         switch ($package->getType()) {
             case 'mobicms-install':
                 return 'install';
-
             default:
                 return parent::getInstallPath($package);
         }

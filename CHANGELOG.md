@@ -1,23 +1,24 @@
 # Changelog
+This project follows [semantic versioning](https://semver.org/).  
 All notable changes to this project will be documented in this file.  
-Detailed change in the [repository log](https://github.com/mobicms/component-installer/commits/).
+Detailed change can see in the [repository log](https://github.com/mobicms/component-installer/commits/).
 
-## Unreleased 
+## Unreleased
 
-### Added
-- Nothing
-  
-### Changed
+#### Added
 - Nothing
 
-### Deprecated
-- Nothing
-  
-### Removed
+#### Changed
 - Nothing
 
-### Fixed
+#### Deprecated
 - Nothing
 
-### Security
+#### Removed
+- Nothing
+
+#### Fixed
+- Nothing
+
+#### Security
 - Nothing

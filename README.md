@@ -7,7 +7,6 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/mobicms/component-installer/badges/coverage.png?b=develop)](https://scrutinizer-ci.com/g/mobicms/component-installer/?branch=develop)
 [![StyleCI](https://github.styleci.io/repos/136712036/shield?branch=develop)](https://github.styleci.io/repos/136712036)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mobicms/component-installer/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/mobicms/component-installer/?branch=develop)
-[![Maintainability](https://api.codeclimate.com/v1/badges/29ac5ddb49fcb1dd4978/maintainability)](https://codeclimate.com/github/mobicms/component-installer/maintainability)
 
 This package is part of [mobiCMS](https://github.com/mobicms/mobicms) Content Management System.
 

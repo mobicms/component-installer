@@ -34,9 +34,9 @@ class Plugin implements PluginInterface
         if (is_file($constantsFile)) {
             require_once $constantsFile;
         } else {
-            defined('CMS_PATH_ROOT') || define('CMS_PATH_ROOT', dirname(__DIR__) . DIRECTORY_SEPARATOR);
-            defined('CMS_PATH_CONFIG') || define('CMS_PATH_CONFIG', CMS_PATH_ROOT);
-            defined('CMS_PATH_PUBLIC') || define('CMS_PATH_PUBLIC', CMS_PATH_ROOT);
+            defined('M_PATH_ROOT') || define('M_PATH_ROOT', dirname(__DIR__) . DIRECTORY_SEPARATOR);
+            defined('M_PATH_CONFIG') || define('M_PATH_CONFIG', M_PATH_ROOT);
+            defined('M_PATH_PUBLIC') || define('M_PATH_PUBLIC', M_PATH_ROOT);
         }
     }
 }

@@ -42,6 +42,6 @@ class PublicAssetsHandler extends AbstractDataHandler
 
     public function getTargetPath() : string
     {
-        return CMS_PATH_PUBLIC . 'assets' . DIRECTORY_SEPARATOR;
+        return M_PATH_PUBLIC . 'assets' . DIRECTORY_SEPARATOR;
     }
 }

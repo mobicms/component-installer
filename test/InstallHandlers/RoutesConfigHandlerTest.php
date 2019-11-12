@@ -13,7 +13,7 @@ declare(strict_types=1);
 namespace MobicmsTest\System\InstallHandlers;
 
 use Composer\Installer\LibraryInstaller;
-use Mobicms\ComponentInstaller\InstallHandlers\RoutesConfigHandler;
+use Mobicms\ComponentInstaller\InstallHandlers\ModulesConfigHandler;
 use PHPUnit\Framework\TestCase;
 
 class RoutesConfigHandlerTest extends TestCase
@@ -21,14 +21,14 @@ class RoutesConfigHandlerTest extends TestCase
     public function testGetSourceFileName()
     {
         $installer = $this->prophesize(LibraryInstaller::class);
-        $handler = new RoutesConfigHandler($installer->reveal());
+        $handler = new ModulesConfigHandler($installer->reveal());
         $this->assertStringEndsWith('config.routes.php', $handler->getSourceFileName());
     }
 
     public function testGetDestinationPath()
     {
         $installer = $this->prophesize(LibraryInstaller::class);
-        $handler = new RoutesConfigHandler($installer->reveal());
-        $this->assertStringEndsWith('routes/', $handler->getDestinationPath());
+        $handler = new ModulesConfigHandler($installer->reveal());
+        $this->assertStringEndsWith('modules/', $handler->getDestinationPath());
     }
 }

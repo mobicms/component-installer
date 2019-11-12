@@ -16,7 +16,7 @@ class ComponentConfigHandler extends AbstractConfigHandler
 {
     public function getDestinationPath() : string
     {
-        return CMS_PATH_CONFIG . 'components/';
+        return M_PATH_CONFIG . 'components/';
     }
 
     public function getSourceFileName() : string

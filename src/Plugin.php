@@ -20,14 +20,22 @@ use function is_file;
 
 class Plugin implements PluginInterface
 {
-    public function activate(Composer $composer, IOInterface $io) : void
+    public function activate(Composer $composer, IOInterface $io): void
     {
         $this->defineConstants();
         $installer = new Installer($io, $composer);
         $composer->getInstallationManager()->addInstaller($installer);
     }
 
-    private function defineConstants() : void
+    public function deactivate(Composer $composer, IOInterface $io): void
+    {
+    }
+
+    public function uninstall(Composer $composer, IOInterface $io): void
+    {
+    }
+
+    private function defineConstants(): void
     {
         $constantsFile = dirname(__DIR__, 4) . '/config/constants.php';
 

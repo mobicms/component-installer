@@ -37,10 +37,10 @@
     },
     "autoload-dev": {
         "files": [
-            "test/constants.php"
+            "tests/resources/stubs/constants.php"
         ],
         "psr-4": {
-            "MobicmsTest\\System\\": "test/"
+            "MobicmsTest\\ComponentInstaller\\": "tests/unit/"
         }
     },
     "extra": {

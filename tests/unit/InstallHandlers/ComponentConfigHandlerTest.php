@@ -10,7 +10,7 @@ declare(strict_types=1);
  * @link        http://mobicms.org mobiCMS Project
  */
 
-namespace MobicmsTest\System\InstallHandlers;
+namespace MobicmsTest\ComponentInstaller\InstallHandlers;
 
 use Composer\Installer\LibraryInstaller;
 use Mobicms\ComponentInstaller\InstallHandlers\ComponentConfigHandler;

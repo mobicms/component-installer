@@ -14,21 +14,20 @@ namespace MobicmsTest\ComponentInstaller\InstallHandlers;
 
 use Composer\Installer\LibraryInstaller;
 use Mobicms\ComponentInstaller\InstallHandlers\ComponentConfigHandler;
+use Mockery;
 use PHPUnit\Framework\TestCase;
 
 class ComponentConfigHandlerTest extends TestCase
 {
     public function testGetSourceFileName()
     {
-        $installer = $this->prophesize(LibraryInstaller::class);
-        $handler = new ComponentConfigHandler($installer->reveal());
+        $handler = new ComponentConfigHandler(Mockery::mock(LibraryInstaller::class));
         $this->assertStringEndsWith('config.component.php', $handler->getSourceFileName());
     }
 
     public function testGetDestinationPath()
     {
-        $installer = $this->prophesize(LibraryInstaller::class);
-        $handler = new ComponentConfigHandler($installer->reveal());
+        $handler = new ComponentConfigHandler(Mockery::mock(LibraryInstaller::class));
         $this->assertStringEndsWith('components/', $handler->getDestinationPath());
     }
 }

@@ -14,21 +14,20 @@ namespace MobicmsTest\ComponentInstaller\InstallHandlers;
 
 use Composer\Installer\LibraryInstaller;
 use Mobicms\ComponentInstaller\InstallHandlers\ModulesConfigHandler;
+use Mockery;
 use PHPUnit\Framework\TestCase;
 
 class RoutesConfigHandlerTest extends TestCase
 {
     public function testGetSourceFileName()
     {
-        $installer = $this->prophesize(LibraryInstaller::class);
-        $handler = new ModulesConfigHandler($installer->reveal());
+        $handler = new ModulesConfigHandler(Mockery::mock(LibraryInstaller::class));
         $this->assertStringEndsWith('config.routes.php', $handler->getSourceFileName());
     }
 
     public function testGetDestinationPath()
     {
-        $installer = $this->prophesize(LibraryInstaller::class);
-        $handler = new ModulesConfigHandler($installer->reveal());
+        $handler = new ModulesConfigHandler(Mockery::mock(LibraryInstaller::class));
         $this->assertStringEndsWith('modules/', $handler->getDestinationPath());
     }
 }

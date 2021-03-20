@@ -72,8 +72,8 @@ class Installer extends LibraryInstaller
     private function getEventManager() : InstallHandlerManager
     {
         $manager = new InstallHandlerManager;
-        $manager->attach(new InstallHandlers\ComponentConfigHandler($this));
-        $manager->attach(new InstallHandlers\ModulesConfigHandler($this));
+        $manager->attach(new InstallHandlers\PackagesConfigHandler($this));
+        $manager->attach(new InstallHandlers\RoutesConfigHandler($this));
         $manager->attach(new InstallHandlers\PublicAssetsHandler($this));
         $manager->attach(new InstallHandlers\PublicDataHandler($this));
 

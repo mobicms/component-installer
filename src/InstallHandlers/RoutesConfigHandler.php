@@ -12,15 +12,15 @@ declare(strict_types=1);
 
 namespace Mobicms\ComponentInstaller\InstallHandlers;
 
-class ComponentConfigHandler extends AbstractConfigHandler
+class RoutesConfigHandler extends AbstractConfigHandler
 {
     public function getDestinationPath() : string
     {
-        return M_PATH_CONFIG . 'components/';
+        return M_PATH_CONFIG . 'routes/';
     }
 
     public function getSourceFileName() : string
     {
-        return '/install/config.component.php';
+        return '/resources/install/routes.php';
     }
 }

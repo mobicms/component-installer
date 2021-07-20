@@ -15,6 +15,7 @@ namespace Mobicms\ComponentInstaller;
 use Composer\Installer\LibraryInstaller;
 use Composer\Repository\InstalledRepositoryInterface;
 use Composer\Package\PackageInterface;
+use React\Promise\PromiseInterface;
 
 use function in_array;
 
@@ -26,9 +27,13 @@ class Installer extends LibraryInstaller
     public function install(
         InstalledRepositoryInterface $repository,
         PackageInterface $package
-    ) : void {
-        parent::install($repository, $package);
-        $this->getEventManager()->install($package);
+    ): PromiseInterface {
+        $promise = parent::install($repository, $package);
+        return $promise->then(
+            function () use ($package) {
+                $this->getEventManager()->install($package);
+            }
+        );
     }
 
     /**
@@ -38,9 +43,13 @@ class Installer extends LibraryInstaller
         InstalledRepositoryInterface $repository,
         PackageInterface $initial,
         PackageInterface $target
-    ) : void {
-        parent::update($repository, $initial, $target);
-        $this->getEventManager()->update($initial, $target);
+    ): PromiseInterface {
+        $promise = parent::update($repository, $initial, $target);
+        return $promise->then(
+            function () use ($initial, $target) {
+                $this->getEventManager()->update($initial, $target);
+            }
+        );
     }
 
     /**
@@ -49,27 +58,34 @@ class Installer extends LibraryInstaller
     public function uninstall(
         InstalledRepositoryInterface $repository,
         PackageInterface $package
-    ) : void {
-        parent::uninstall($repository, $package);
-        $this->getEventManager()->uninstall($package);
+    ): PromiseInterface {
+        $promise = parent::uninstall($repository, $package);
+        return $promise->then(
+            function () use ($package) {
+                $this->getEventManager()->uninstall($package);
+            }
+        );
     }
 
     /**
      * {@inheritDoc}
      */
-    public function supports($packageType) : bool
+    public function supports($packageType): bool
     {
-        return in_array($packageType, [
-            'mobicms-library',
-            'mobicms-module',
-            'mobicms-template',
-        ]);
+        return in_array(
+            $packageType,
+            [
+                'mobicms-library',
+                'mobicms-module',
+                'mobicms-template',
+            ]
+        );
     }
 
     /**
      * @return InstallHandlerManager
      */
-    private function getEventManager() : InstallHandlerManager
+    private function getEventManager(): InstallHandlerManager
     {
         $manager = new InstallHandlerManager;
         $manager->attach(new InstallHandlers\PackagesConfigHandler($this));
